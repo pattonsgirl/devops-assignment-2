@@ -37,7 +37,7 @@ jobs:
       - name: Copy Jar file
         # In ./build/libs find any file with the jar extension exluding those with pkain in the name
         # Copy it to the current directory
-        run: find ./build/libs -name "*.jar" ! -name "*plain*" -exec cp {} . \;
+        run: mv ./build/libs/*.jar ./app.jar
       # Make the jar accessible to the next job
       - uses: actions/upload-artifact@master
         with:
